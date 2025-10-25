@@ -1,38 +1,44 @@
 # Debt Repayment Planner
 
-A full-stack web application to help manage and plan debt repayments.
+A full-stack web application to help manage and plan debt repayment strategies.
 
-## Features
-- Add and manage loans
-- Calculate monthly payments
-- View repayment plans
-- Currency display in Indian Rupees (₹)
+## 🚀 Live Demo
+- Frontend: [GitHub Pages](https://pranithaapradeep.github.io/debt-repayment-planner/)
 
-## Tech Stack
-- **Frontend**: React.js
-- **Backend**: Spring Boot (Java)
-- **Database**: H2 (in-memory)
+## 🏗️ Architecture
+- **Frontend**: React.js with Axios
+- **Backend**: Spring Boot with REST API
+- **Database**: JPA/Hibernate
 
-## Getting Started
+## 📦 Running Locally
 
-### Prerequisites
-- Node.js
-- Java 11+
-- Maven
+### Backend (Spring Boot)
+```bash
+cd springapp
+mvn spring-boot:run
+```
 
-### Running the Application
+### Frontend (React)
+```bash
+cd reactapp
+npm install
+npm start
+```
 
-1. **Start the backend server:**
-   ```bash
-   cd springapp
-   mvn spring-boot:run
-   ```
+## 🌐 Deployment Options
 
-2. **Start the frontend:**
-   ```bash
-   cd reactapp
-   npm install
-   npm start
-   ```
+### 1. GitHub Pages (Frontend Only)
+- Automatically deploys on push to main branch
+- Available at: https://pranithaapradeep.github.io/debt-repayment-planner/
 
-The application will be available at `http://localhost:3000`
+### 2. Full-Stack Deployment
+- **Frontend**: Netlify, Vercel, or AWS S3
+- **Backend**: Heroku, Railway, or AWS EC2
+
+## 📁 Project Structure
+```
+├── reactapp/          # React frontend
+├── springapp/         # Spring Boot backend
+├── .github/workflows/ # CI/CD automation
+└── README.md
+```
