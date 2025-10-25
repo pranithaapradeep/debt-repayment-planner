@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import LoanForm from './components/LoanForm';
 import RepaymentPlan from './components/RepaymentPlan';
@@ -9,7 +9,7 @@ function App() {
   const [method, setMethod] = useState('snowball');
   const [loading, setLoading] = useState(false);
 
-  const fetchRepaymentPlan = async () => {
+  const fetchRepaymentPlan = useCallback(async () => {
     setLoading(true);
     try {
       const data = await getRepaymentPlan(method);
@@ -20,11 +20,11 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [method]);
 
   useEffect(() => {
     fetchRepaymentPlan();
-  }, [method]);
+  }, [fetchRepaymentPlan]);
 
   const handleMethodChange = (e) => {
     setMethod(e.target.value);
